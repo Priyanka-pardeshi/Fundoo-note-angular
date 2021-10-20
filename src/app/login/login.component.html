@@ -1,0 +1,46 @@
+
+<div class="container">
+    
+    <div>
+        <p class="logo">
+            <span style="color:rgb(29, 29, 167)">F</span>
+            <span style="color:rgb(214, 16, 16)">u</span>
+            <span style="color:yellow">n</span>
+            <span style="color : rgb(4, 4, 80)">d</span>
+            <span style="color:rgb(62, 235, 62)">o</span>
+            <span style="color:rgb(209, 34, 34)">o</span>
+        </p>
+
+        <p class="title">
+            Sign in
+        </p>
+
+        <p class="use-account">
+            Use your Fundoo Account
+        </p>
+        <form>
+            <div>             
+                <mat-form-field appearance="outline" class="form-field">
+                  <mat-label>Email or phone</mat-label>
+                  <input matInput placeholder="" formControlName = "email"/>
+                </mat-form-field>             
+            </div>
+
+            <div>             
+                <mat-form-field appearance="outline" class="form-field">
+                  <mat-label>Password</mat-label>
+                  <input matInput placeholder="" formControlName = "password" input type="password"/>
+                </mat-form-field>             
+            </div>
+
+            <div>
+                <button mat-button class="forget-password-button" routerLink="/forget"><strong>Forget password?</strong></button>                
+            </div>
+            <div>        
+                <button mat-button class="create-account-button" routerLink="/register"><strong>Create account</strong></button>                
+                <button mat-raised-button class="next-button">Next</button>
+            </div>
+
+        </form>
+    </div>
+</div>
