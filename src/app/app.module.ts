@@ -12,6 +12,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ForgetComponent } from './components/forget/forget.component';
 import {  ReactiveFormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { LogoComponent } from './components/logo/logo.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     LoginComponent,
     RegisterComponent,
     ForgetComponent,
+    LogoComponent,
 
   ],
   imports: [

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { validateBasis } from '@angular/flex-layout';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 /**import { join } from 'path';
 */
 @Component({
@@ -11,15 +12,22 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class RegisterComponent implements OnInit {
   regForm!: FormGroup;
   submitted=false;
+  show = false;
   constructor(private formBuilder:FormBuilder) { }
 
-  ngOnInit(){
-    this.regForm=this.formBuilder.group({
-      firstname:['',Validators.required],
-      lastname:['',Validators.required],
-      email:['',Validators.required,Validators.email],
-      password:['',[Validators.required,Validators.minLength(3)]],
-      confirmpassword:['',[Validators.required,Validators.minLength(3)]]
+  ngOnInit() {
+    this.regForm = this.formBuilder.group({
+      firstName: [
+        '',
+        [Validators.required, Validators.pattern(/^[a-zA-Z]{3,}$/)],
+      ],
+      lastName: [
+        '',
+        [Validators.required, Validators.pattern(/^[a-zA-Z]{3,}$/)],
+      ],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      confirmpassword: ['', [Validators.required]],
     });
   }
   /**we are getting the regForm data inside this formData function */
@@ -27,18 +35,22 @@ export class RegisterComponent implements OnInit {
     return this.regForm.controls;
   }
 
-  onSubmit(){
-    this.submitted=true;
-    /**if any of field is invalid will come to this part */
-    if(this.regForm.invalid)
-    {
-      return
+
+  onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.regForm.invalid) {
+      return;
     }
-    console.log(JSON.stringify(this.regForm.value))
+
+    // display form values on success
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.regForm.value, null, 4));
   }
+  
   passwordInput ="";
 
   OnCheck() {
-    
+  
   }
 }
