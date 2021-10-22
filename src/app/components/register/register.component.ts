@@ -45,7 +45,7 @@ export class RegisterComponent implements OnInit {
     }
 
     // display form values on success
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.regForm.value, null, 4));
+    alert('SUCCESS!! \n\n' + JSON.stringify(this.regForm.value, null, 4));
   }
   
   passwordInput ="";

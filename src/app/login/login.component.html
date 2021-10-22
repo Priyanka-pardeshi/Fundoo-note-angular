@@ -1,6 +1,5 @@
-
 <div class="container">
-    
+
     <div>
         <p class="logo">
             <span style="color:rgb(29, 29, 167)">F</span>
@@ -18,27 +17,36 @@
         <p class="use-account">
             Use your Fundoo Account
         </p>
-        <form>
-            <div>             
+        <form [formGroup]="loginForm">
+            <div>
                 <mat-form-field appearance="outline" class="form-field">
-                  <mat-label>Email or phone</mat-label>
-                  <input matInput placeholder="Email" formControlName ="email"/>
-                </mat-form-field>             
-            </div>
-
-            <div>             
-                <mat-form-field appearance="outline" class="form-field">
-                  <mat-label>Password</mat-label>
-                  <input matInput placeholder="Password" formControlName = "password" input type="password"/>
-                </mat-form-field>             
+                    <mat-label>Email or phone</mat-label>
+                    <input matInput placeholder="Email" formControlName="email">
+                    <mat-hint *ngIf="submitted && formData.email.errors && formData.email.errors.required"
+                        class="invalid-feedback">
+                        <mat-icon matPrefix>error</mat-icon> Enter a valid email
+                    </mat-hint>
+                </mat-form-field>
             </div>
 
             <div>
-                <button mat-button class="forget-password-button" routerLink="/forget"><strong>Forget password?</strong></button>                
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder="Password" formControlName="password" input type="password">
+                    <mat-hint *ngIf="submitted && formData.password.errors  && formData.password.errors.required"
+                        class="invalid-feedback">
+                        <mat-icon matPrefix>error</mat-icon> Enter a valid password
+                    </mat-hint>
+                </mat-form-field>
             </div>
-            <div>        
-                <button mat-button class="create-account-button" routerLink="/register"><strong>Create account</strong></button>                
-                <button mat-raised-button class="next-button">Next</button>
+
+            <div>
+                <button mat-button class="forget-password-button" routerLink="/forget"><strong>Forget password?</strong></button>
+            </div>
+            <div>
+                <button mat-button class="create-account-button" routerLink="/register"><strong>Create
+                        account</strong></button>
+                <button mat-raised-button class="next-button" (click)="gotoHome()">Next</button>
             </div>
 
         </form>

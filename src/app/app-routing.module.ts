@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ForgetComponent } from './components/forget/forget.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,9 @@ const routes: Routes = [
   },
   {
     path:'forget',component:ForgetComponent
+  },
+  {
+    path:'home',component:HomeComponent
   }
 ];
 
